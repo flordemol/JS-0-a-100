@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apus</title>
+</head>
+<body>
+    
+    <h2>Ejercicio 4 [Apus]</h2>
+    <p>Crear un script que permita simular de forma muy básica el mecanismo de una caja registradora.</p>
+    <p>El usuario debe insertar el nombre del producto, la cantidad y el precio unitario.</p>
+    <p>En la pantalla mostrar: “Gracias por comprar x unidades de x articulo. Total: Total a abonar.</p>
+    <hr>
+
+    <script>
+
+        const producto = prompt("Ingrese el nombre del producto");
+        const cantidad = parseInt(prompt("Ingrese la cantidad de productos"));
+        const precio = parseFloat(prompt("Ingrese el precio unitario"));
+        document.write(`Gracias por comprar ${cantidad} unidades de ${producto}. Total: $${cantidad * precio}.`);
+
+    </script>
+    
+</body>
+</html>

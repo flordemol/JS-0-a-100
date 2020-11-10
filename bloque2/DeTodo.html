@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeTodo</title>
+</head>
+<body>
+    
+    <h2>Ejercicio 9 [DeTodo]</h2>
+    <p>Crear un script que permita al usuario ingresar un número y muestre la tabla de multiplicar y la suma de los mismos. (Ejemplo: El usuario ingresa el numero 4)</p>
+    <p>4x1 = 4</p>
+    <p>4x2 = 8</p>
+    <p>…</p>
+    <p>4+8+12+16 = 40</p>
+    <hr>
+
+    <script>
+
+        const numDeTodo = parseFloat(prompt("Ingrese un número"));
+        let suma = 0;
+        const res = [];
+
+        document.write(`Tabla de multiplicar del ${numDeTodo}</br>`);
+        for (let i = 1; i <= 10; i++) {
+            let resultado = numDeTodo * i;
+            document.write(`${numDeTodo} x ${i} = ${resultado}</br>`);
+            res.push(resultado);
+            suma += resultado;
+        }
+        document.write("</br>" + res.join(" + ") + " = " + suma );
+
+    </script>
+</body>
+</html>

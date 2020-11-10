@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElProfesor</title>
+</head>
+<body>
+    
+    <h2>Ejercicio 5 [ElProfesor]</h2>
+    <p>Confeccionar un programa que permita al usuario ingresar 2 notas y calcular:</p>
+    <li>Suma total</li>
+    <li>Promedio</li>
+    <li>Nota máxima</li>
+    <hr>
+
+    <script>
+
+        const nota1 = parseFloat(prompt("Ingrese la primer nota"));
+        const nota2 = parseFloat(prompt("Ingrese la segunda nota"));
+        document.write(`Suma de las notas: ${nota1 + nota2} </br>`);
+        document.write(`Promedio de las notas: ${(nota1 + nota2)/2} </br>`);
+        document.write(`Nota máxima: ${Math.max(nota1, nota2)} </br>`);
+
+    </script>
+
+</body>
+</html>

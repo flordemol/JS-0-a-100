@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newArray</title>
+</head>
+<body>
+    
+    <h2>Ejercicio 11 [newArray]</h2>
+    <p>Crear un vector con 5 valores aleatorios comprendidos entre 1 y 1000. Luego extraer los dos últimos elementos sumarlos y mostrarlos. Imprimir también el tamaño final del vector</p>
+    <p>Recordar que const nro=1+(Math.random()*1000); permite generar un número aleatorio.</p>
+    <hr>
+
+    <script>
+
+        const newArray = [];
+
+        for (let i = 0; i < 5; i++) {
+            newArray.push(1+(Math.round(Math.random()*1000)));
+        }
+        document.write("Valores aleatorios: " + newArray.join(" - "));
+
+        const ultimoNum = newArray.pop();
+        const anteultNum = newArray.pop();
+        document.write(`</br>${ultimoNum} + ${anteultNum} = ${ultimoNum + anteultNum}`);
+        document.write(`</br>El tamaño final del vector es ${newArray.length}: ${newArray.join(" - ")}`);
+
+    </script>
+</body>
+</html>
+
