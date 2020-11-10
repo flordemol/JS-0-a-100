@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaFabrica</title>
+</head>
+<body>
+    
+    <h2>Ejercicio 10 [LaFabrica]</h2>
+    <p>En una empresa trabajan 5 empleados cuyos sueldos oscilan entre $100 y $500, 
+        realizar un programa que lea los sueldos que cobra cada empleado e informe cuántos empleados cobran entre $100 y $300 y cuántos cobran más de $300.</p>
+    <p>Además el programa deberá informar el importe que gasta la empresa en sueldos al personal (grupo)</p>
+ 
+    <hr>
+
+    <script>
+
+        const sueldos = [];
+        let sueldo;
+        let totalSueldos = 0;
+
+        for (let i = 1; i <= 5; i++) {
+            
+            do{
+                sueldo = parseFloat(prompt(`Ingrese el sueldo del empleado ${i}. \nRecuerde que los sueldos oscilan entre $100 y $500`));
+            } while(sueldo < 100 || sueldo > 500);
+
+            sueldos.push(sueldo);
+            totalSueldos += sueldo;  
+        }
+
+        const sueldosBajos = sueldos.filter(sueldo => sueldo <= 300);
+        const sueldosAltos = sueldos.filter(sueldo => sueldo > 300);
+
+        document.write(`De los 5 empleados, ${sueldosBajos.length} de ellos cobran entre $100 y $300</br>`);
+        console.log(`Array de sueldos bajos: ${sueldosBajos}`);
+
+        document.write(`Mientras que los otros ${sueldosAltos.length} cobran más de $300</br>`);
+        console.log(`Array de sueldos altos: ${sueldosAltos}`);
+
+        document.write(`La empresa gasta $${totalSueldos} en sueldos al personal`);
+    </script>
+</body>
+</html>
