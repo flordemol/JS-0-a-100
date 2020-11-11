@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaClase</title>
+</head>
+<body>
+    
+    <h2>Ejercicio 12 [LaClase]</h2>
+    <p>Confeccionar un script que permita a un usuario ingresar nombre de alumno y notas en distintos vectores (condición de finalización → alumno = “”). Al finalizar la carga se pide:</p>
+    <ol>
+        <li>Cantidad de alumnos cargados</li>
+        <li>Cantidad de alumnos aprobados (nota >=6)</li>
+        <li>Cantidad de alumnos promocionados</li>
+        <li>Alumno/s con mayor nota (si son muchos mostrarlos todos)</li>
+        <li>Alumno/s con menor nota</li>
+        <li>Media de aprobados (Promedio de todos los alumnos aprobados)</li>
+        <li>Media de desaprobados (Promedio de todos los alumnos desaprobados)</li>
+        <li>Ordenar y mostrar los nombres de los alumnos por orden alfabético</li>
+        <li>Cantidad de notas pares y cantidad de notas impares.</li>
+    </ol>
+    <hr>
+
+    <script>
+
+        // Carga de alumnos y notas
+        const alumnos = [];
+        const notas = [];
+        let alumno;
+
+        do{
+        alumno = prompt("Ingrese el nombre del alumno, para finalizar deje vacío y haga click en aceptar");
+        if(alumno == "") break;
+        alumnos.push(alumno);
+        notas.push(parseFloat(prompt("Ingrese la nota del alumno")));
+        } while(alumno != "");
+
+
+        // Listar alumnos y notas
+        document.write("<u>Alumnos / Notas</u></br>");
+        for (let i = 0; i < alumnos.length; i++) {
+        document.write(`<li>${alumnos[i]} - nota: ${notas[i]}</li>`);
+        };
+
+
+        // Cantidad de alumnos cargados
+        document.write(`</br></br>Cantidad de alumnos cargados: ${alumnos.length}</br>`);
+
+
+        // Cantidad de alumnos aprobados (nota >=6)
+        const aprobados = notas.filter(nota => nota >= 6);
+        document.write(`</br>Cantidad de alumnos aprobados: ${aprobados.length}</br>`);
+
+
+        // Cantidad de alumnos promocionados
+        const promocionados = notas.filter(nota => nota >= 7);
+        document.write(`</br>Cantidad de alumnos promocionados: ${promocionados.length}</br>`);
+
+
+        // Alumno/s con mayor nota (si son muchos mostrarlos todos)
+        const notaMayor = Math.max(...notas);
+        document.write(`</br>La nota más alta es ${notaMayor} y la han obtenido los siguientes alumnos:</br>`);
+        for (let i = 0; i < notas.length; i++) {
+            if(notas[i] == notaMayor){
+                document.write(`- ${alumnos[i]}</br>`);
+            };
+        }
+        
+
+        // Alumno/s con menor nota
+        const notaMenor = Math.min(...notas);
+        document.write(`</br>La nota más baja es ${notaMenor} y la han obtenido los siguientes alumnos:</br>`);
+        for (let i = 0; i < notas.length; i++) {
+            if(notas[i] == notaMenor){
+                document.write(`- ${alumnos[i]}</br>`);
+            };
+        }
+
+
+        // Media de aprobados (Promedio de todos los alumnos aprobados)
+        let sumaAprobados = 0;
+        
+        aprobados.forEach((nota) => {
+            sumaAprobados += nota;
+        })
+        let mediaAprobados = sumaAprobados/aprobados.length;
+
+        document.write(`</br>Media de aprobados: ${mediaAprobados}</br>`);
+       
+
+       // Media de desaprobados (Promedio de todos los alumnos desaprobados)
+       const desaprobados = notas.filter(nota => nota < 6);
+       let sumaDesaprobados = 0;
+
+       desaprobados.forEach((nota) => {
+            sumaDesaprobados += nota;
+        })
+        let mediaDesaprobados = sumaDesaprobados/desaprobados.length;
+
+        document.write(`</br>Media de desaprobados: ${mediaDesaprobados}</br>`);
+
+
+        // Ordenar y mostrar los nombres de los alumnos por orden alfabético
+        const alumnosOrdenados = alumnos.sort(
+            function(a, b) {
+            if (a.toLowerCase() < b.toLowerCase()) return -1;
+            if (a.toLowerCase() > b.toLowerCase()) return 1;
+            return 0;
+        });
+
+        document.write(`</br>Alumnos ordenados alfabeticamente: ${alumnosOrdenados.join(" - ")}</br>`);
+
+
+       // Cantidad de notas pares y cantidad de notas impares
+       const notasPares = notas.filter(nota => (nota % 2) == 0);
+       const notasImpares = notas.filter(nota => (nota % 2) != 0);
+
+       document.write(`</br>${notasPares.length} notas pares: ${notasPares.join(" - ")}</br>`);
+       document.write(`</br>${notasImpares.length} notas impares: ${notasImpares.join(" - ")}</br>`);
+       
+    </script>
+</body>
+</html>
