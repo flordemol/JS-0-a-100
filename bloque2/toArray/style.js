@@ -1,0 +1,1 @@
+const arrayCaracteres = (texto) => texto.split("").join(" - ");

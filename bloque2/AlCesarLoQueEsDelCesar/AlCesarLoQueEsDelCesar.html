@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlCesarLoQueEsDelCesar</title>
+    <script src="style.js"></script>
+</head>
+<body>
+    <h1>[AlCesarLoQueEsDelCesar]</h1>
+    <p>Implementar una función que pueda aplicar el cifrado del césar. (Googlear)</p>
+    <hr>
+    
+    <h2>Cifrado César</h2>
+    <p>Es un tipo de cifrado por sustitución en el que una letra en el texto original es reemplazada por otra letra que se encuentra un número fijo de posiciones más adelante en el alfabeto.</p>
+    
+    <script>
+       const texto = prompt("Ingrese un texto");
+       const num = parseInt(prompt("Ingrese un número entero para hacer el cifrado"));
+       document.write(`</br>Texto original: ${texto.toUpperCase()}</br>`);
+       document.write(`Texto cifrado: ${cifrar(texto, num)}`);
+    </script>
+</body>
+</html>
