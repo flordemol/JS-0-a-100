@@ -1,6 +1,6 @@
 const letras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-const cifrar = (texto, num) => {
+const cifrar = (texto, num=3) => {
     const indices = [];
     const nuevosIndices = [];
     let textocifrado = "";
